@@ -9,7 +9,9 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3600/api/random");
+      const response = await axios.get(
+        "https://c-backend-drab.vercel.app/api/random"
+      );
       setRandomNum(response.data.randomNum);
     };
 
@@ -27,7 +29,9 @@ const App = () => {
       return () => clearInterval(interval);
     } else {
       const fetchNewRandomNum = async () => {
-        const response = await axios.get("http://localhost:3600/api/random");
+        const response = await axios.get(
+          "https://c-backend-drab.vercel.app/api/random"
+        );
         setRandomNum(response.data.randomNum);
         setCards([]);
       };
